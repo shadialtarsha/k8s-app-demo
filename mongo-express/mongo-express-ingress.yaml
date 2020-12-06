@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mongo-express-ingress
+spec:
+  rules:
+  - host: mongo-express.com
+    http:
+      paths:
+      - backend:
+          serviceName: my-app-internal-service
+          servicePort: 8081
+        path: /
